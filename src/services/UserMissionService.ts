@@ -42,10 +42,15 @@ const getUserDailyById = async (userId: number): Promise<getUserDailyDTO[] | nul
 const checkMission = async (checkMissionDTO: CheckMissionDTO) => {
   try {
     console.log(checkMissionDTO.completeMissions);
+
+    // const data = await User.findByIdAndUpdate(checkMissionDTO._id, {
+    //   completeMissions: checkMissionDTO.completeMissions,
+    // });
+
     const data = await User.updateOne(
       { _id: checkMissionDTO._id },
       {
-        $push: { completeMissions: checkMissionDTO.completeMissions },
+        $set: { completeMissions: checkMissionDTO.completeMissions },
       },
     );
   } catch (error) {
