@@ -1,11 +1,14 @@
 import mongoose from "mongoose";
-import { UserMissionInfo } from "../interfaces/UserMissionInfo";
+import { UserMissionInfo } from "../interfaces/userMission/UserMissionInfo";
 
 
 const UserMissionSchema = new mongoose.Schema({
     userId: {
         type: Number,
         required: true,
+    },
+    userName: {
+        type: String
     },
     dailyId: {
         type: mongoose.Types.ObjectId,
