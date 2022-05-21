@@ -1,4 +1,3 @@
 // controller index file
-export {
-    
-}
+import DailyController from './DailyController';
+export { DailyController };
