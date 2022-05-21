@@ -1,5 +1,6 @@
-import mongoose from 'mongoose';
-import { UserMissionInfo } from '../interfaces/userMission/UserMissionInfo';
+import mongoose from "mongoose";
+import { UserMissionInfo } from "../interfaces/userMission/UserMissionInfo";
+
 
 const UserMissionSchema = new mongoose.Schema({
   userId: {

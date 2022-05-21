@@ -1,5 +1,3 @@
-import mongoose from 'mongoose';
-
 export interface UserMissionInfo {
   userId: number;
   userName: string;
