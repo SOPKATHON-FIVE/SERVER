@@ -4,7 +4,6 @@ import mongoose from 'mongoose';
 export interface DailyResponseDto {
   _id: mongoose.Types.ObjectId;
   dailyName: string;
-  description: string;
   userId: number;
   userName: string;
   missions?: string[];
