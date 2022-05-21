@@ -14,13 +14,9 @@ const UserMissionSchema = new mongoose.Schema({
     required: true,
     ref: 'Daily',
   },
-  completeMissions: [
-    {
-      mission: {
-        type: String,
-      },
-    },
-  ],
+  completeMissions: {
+    type: Array,
+  },
 });
 
 export default mongoose.model<UserMissionInfo & mongoose.Document>('UserMission', UserMissionSchema);

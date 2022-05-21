@@ -17,14 +17,9 @@ const DailySchema = new mongoose.Schema({
   userName: {
     type: String,
   },
-  missions: [
-    {
-      mission: {
-        type: String,
-        required: true,
-      },
-    },
-  ],
+  missions: {
+    type: Array,
+  },
 });
 
 export default mongoose.model<DailyInfo & mongoose.Document>('Daily', DailySchema);

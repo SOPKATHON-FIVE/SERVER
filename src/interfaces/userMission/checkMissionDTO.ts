@@ -5,7 +5,7 @@ export interface CheckMissionDTO {
   _id: mongoose.Types.ObjectId;
   userId: number;
   dailyId: mongoose.Types.ObjectId;
-  completeMissions?: checkMissionNameDTO[];
+  completeMissions?: string[];
 }
 
 export interface checkMissionNameDTO {

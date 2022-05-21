@@ -6,5 +6,5 @@ export interface getUserDailyDTO {
   userId: number;
   userName: string;
   dailyId: mongoose.Types.ObjectId;
-  completeMissions: MissionCheckedInfo[];
+  completeMissions: string[];
 }

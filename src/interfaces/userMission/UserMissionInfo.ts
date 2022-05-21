@@ -4,7 +4,7 @@ export interface UserMissionInfo {
   userId: number;
   userName: string;
   dailyId: mongoose.Types.ObjectId;
-  completeMissions: MissionCheckedInfo[];
+  completeMissions: string[];
 }
 
 export interface MissionCheckedInfo {
