@@ -3,6 +3,7 @@ import { CheckMissionDTO } from '../interfaces/userMission/checkMissionDTO';
 import { getUserDailyDTO } from '../interfaces/userMission/getUserDailyDTO';
 
 import { UserAddDailyDTO } from '../interfaces/userMission/UserAddDailyDTO';
+import Daily from '../models/Daily';
 import User from '../models/User';
 
 const addUserDaily = async (userAddDailyDTO: UserAddDailyDTO) => {
@@ -18,10 +19,15 @@ const addUserDaily = async (userAddDailyDTO: UserAddDailyDTO) => {
 const getUserDailyById = async (userId: number): Promise<getUserDailyDTO[] | null> => {
   try {
     const data = await User.find({
-      userId: {
-        $in: userId,
-      },
-    });
+      userId,
+    }).populate('dailyId');
+    // for (let r of data) {
+    //   console.log(r);
+    //   const dailyId = r.dailyId;
+    //   console.log(dailyId);
+    //   const data2 = await Daily.findById(dailyId);
+    // }
+
     if (!data) {
       return null;
     }
