@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 export interface DailyInfo {
     dailyName: string;
@@ -7,7 +7,4 @@ export interface DailyInfo {
     userName: string;
     missions: string[];
 }
-
-
-
 

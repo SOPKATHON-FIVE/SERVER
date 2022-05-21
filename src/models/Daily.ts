@@ -1,11 +1,10 @@
-import mongoose from "mongoose";
-import { DailyInfo } from "../interfaces/daily/DailyInfo";
+import mongoose from 'mongoose';
+import { DailyInfo } from '../interfaces/daily/DailyInfo';
 
 const DailySchema = new mongoose.Schema({
     dailyName: {
         type: String,
         required: true,
-
     },
     description: {
         type: String,
@@ -23,4 +22,4 @@ const DailySchema = new mongoose.Schema({
     }
 });
 
-export default mongoose.model<DailyInfo & mongoose.Document>("Daily", DailySchema);
+export default mongoose.model<DailyInfo & mongoose.Document>('Daily', DailySchema);

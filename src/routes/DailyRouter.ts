@@ -2,6 +2,7 @@ import { Router } from "express";
 import { DailyController } from "../controllers";
 const { body } = require("express-validator/check");
 
+import UserMissionController from '../controllers/UserMissionController';
 const router: Router = Router();
 
 router.post('/my', [
@@ -16,5 +17,10 @@ router.post('/my', [
 
 router.get('/my/:userId', DailyController.getDaily);
 
+
+router.get('/', DailyController.getAllDaily);
+router.post('/', UserMissionController.addUserDaily);
+router.get('/:userId', UserMissionController.getUserDailyById);
+router.post('/check', UserMissionController.checkMission);
 
 export default router;

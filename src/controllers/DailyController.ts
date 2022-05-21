@@ -5,6 +5,10 @@ import message from "../modules/responseMessage";
 import statusCode from "../modules/statusCode";
 import util from "../modules/util";
 import DailyService from "../services/DailyService";
+import { validationResult } from 'express-validator';
+
+
+
 
 /**
  * @router POST /daily/my
@@ -52,9 +56,20 @@ const getDaily = async (req: Request, res: Response) => {
 }
 
 
-export default {
-    createDaily,
-    getDaily,
 
+const getAllDaily = async (req: Request, res: Response) => {
+  try {
+    const data = await DailyService.getAllDaily();
+    res.status(statusCode.CREATED).send(util.success(statusCode.CREATED, message.SUCCESS, data));
+  } catch (error) {
+    console.log(error);
+    res.status(statusCode.INTERNAL_SERVER_ERROR).send(util.fail(statusCode.INTERNAL_SERVER_ERROR, message.INTERNAL_SERVER_ERROR));
+  }
+};
+
+export default {
+  getAllDaily,
+   createDaily,
+    getDaily,
 };
 
