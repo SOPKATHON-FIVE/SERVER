@@ -1,4 +1,3 @@
 //service index file
-export {
-
-}
+import DailyService from './DailyService';
+export { DailyService };
