@@ -55,5 +55,6 @@ const getDaily = async (req: Request, res: Response) => {
 export default {
     createDaily,
     getDaily,
+
 };
 
