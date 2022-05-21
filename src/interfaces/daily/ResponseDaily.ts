@@ -6,9 +6,5 @@ export interface ResponseDaily {
   description: string;
   userId: number;
   userName: string;
-  missions: ResponseMissionInfo[];
-}
-
-export interface ResponseMissionInfo {
-  mission: string;
+  missions: string[];
 }

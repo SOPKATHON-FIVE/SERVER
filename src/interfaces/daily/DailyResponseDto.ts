@@ -7,5 +7,6 @@ export interface DailyResponseDto {
   description: string;
   userId: number;
   userName: string;
-  missions: string[];
+  missions?: string[];
+  _v?: number;
 }
